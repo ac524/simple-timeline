@@ -2,17 +2,31 @@
   {
     "username": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "timeline": [
+      "635d96743d1c890c07ea2aa7",
+      "635d96743d1c890c07ea2aa8"
+    ]
   },
   {
     "username": "Max Kanat-Alexander",
     "email": "mkanatalexander@techfriends.dev",
-    "password": "password02"
+    "password": "password02",
+    "timeline": [
+      "635d96743d1c890c07ea2aa9",
+      "635d96743d1c890c07ea2aaa",
+      "635d96743d1c890c07ea2aab"
+    ]
   },
   {
     "username": "Why The Lucky Stiff",
     "email": "wtls@techfriends.dev",
-    "password": "password03"
+    "password": "password03",
+    "timeline": [
+      "635d96743d1c890c07ea2aac",
+      "635d96743d1c890c07ea2aad",
+      "635d96743d1c890c07ea2aae"
+    ]
   },
   {
     "username": "Kent Beck",

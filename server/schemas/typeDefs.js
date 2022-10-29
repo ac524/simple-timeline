@@ -5,7 +5,24 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    password: String
+    timeline: [Timeline]
+  }
+
+  type Timeline {
+    _id: ID,
+    name: String
+    description: String
+    startDate: String
+    endDate: String
+    isPresent: Boolean
+  }
+
+  input TimelineInput {
+    name: String!
+    description: String
+    startDate: String!
+    endDate: String
+    isPresent: Boolean
   }
 
   type Auth {
@@ -14,7 +31,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User]
+    # users: [User]
     user(username: String!): User
     me: User
   }
@@ -22,6 +39,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addTimeline(entry: TimelineInput): Timeline
   }
 `;
 

@@ -1,13 +1,14 @@
 const db = require('../config/connection');
-const { User } = require('../models');
+const { User, Timeline } = require('../models');
 const userSeeds = require('./userSeeds.json');
-// const thoughtSeeds = require('./thoughtSeeds.json');
+const timelineSeeds = require('./timelineSeeds.json');
 
 db.once('open', async () => {
   try {
-    // await Thought.deleteMany({});
+    await Timeline.deleteMany({});
     await User.deleteMany({});
 
+    await Timeline.create(timelineSeeds);
     await User.create(userSeeds);
 
     // for (let i = 0; i < thoughtSeeds.length; i++) {

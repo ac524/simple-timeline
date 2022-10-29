@@ -1,3 +1,4 @@
 const User = require('./User');
+const Timeline = require('./Timeline');
 
-module.exports = { User };
+module.exports = { User, Timeline };
