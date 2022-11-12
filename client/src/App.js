@@ -14,6 +14,9 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Container from '@mui/material/Container';
+import NewEntry from './pages/NewEntry';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,8 +47,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
+          <Navbar />
+          {/* <Header /> */}
+          <Container maxWidth="sm">
             <Routes>
               <Route 
                 path="/"
@@ -64,11 +68,15 @@ function App() {
                 element={<Profile />}
               />
               <Route 
+                path="/newentry"
+                element={<NewEntry />}
+              />
+              {/* <Route 
                 path="/profiles/:username"
                 element={<Profile />}
-              />
+              /> */}
             </Routes>
-          </div>
+          </Container>
           <Footer />
         </div>
       </Router>

@@ -23,3 +23,16 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_TIMELINE_ENTRY = gql`
+  mutation AddTimline($entry: TimelineInput) {
+    addTimeline(entry: $entry) {
+      _id
+      name
+      description
+      startDate
+      endDate
+      isPresent
+    }
+  }
+`;

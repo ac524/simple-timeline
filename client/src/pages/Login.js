@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
+// import Input from '@mui/material/Input';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -52,31 +57,33 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+              <Box component="form" onSubmit={handleFormSubmit}>
+                <Box sx={{padding: "1rem 0"}}>
+                  <TextField
+                    className="form-input"
+                    fullWidth
+                    label="Your Email"
+                    variant="outlined"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                </Box>
+                <Box sx={{padding: "1rem 0"}}>
+                  <TextField
+                    className="form-input"
+                    fullWidth
+                    label="Your Password"
+                    variant="outlined"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
+                </Box>
+                <Button variant="contained" type="submit">Submit</Button>
+              </Box>
             )}
 
             {error && (
